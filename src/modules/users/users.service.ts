@@ -1,26 +1,51 @@
-import { Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    const users = this.create(createUserDto);
+    return {
+      status: HttpStatus.CREATED,
+      message: 'User created successfully',
+      data: users,
+    }
   }
 
   findAll() {
-    return `This action returns all users`;
+    const users = this.findAll();
+    return {
+      status: HttpStatus.OK,
+      message: 'Users retrieved successfully',
+      data: users,
+    }
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    const user = this.findOne(id);
+    return {
+      status: HttpStatus.OK,
+      message: 'User retrieved successfully',
+      data: user,
+    }
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    const user = this.update(id, updateUserDto);
+    return {
+      status: HttpStatus.OK,
+      message: 'User updated successfully',
+      data: user,
+    }
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    const user = this.remove(id);
+    return {
+      status: HttpStatus.OK,
+      message: 'User removed successfully',
+      data: user,
+    }
   }
 }
