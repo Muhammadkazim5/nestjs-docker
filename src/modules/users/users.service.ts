@@ -17,7 +17,7 @@ export class UsersService {
     const users = this.findAll();
     return {
       status: HttpStatus.OK,
-      message: 'Users retrieved successfully',
+      message: 'Users fetch successfully',
       data: users,
     }
   }
@@ -26,7 +26,7 @@ export class UsersService {
     const user = this.findOne(id);
     return {
       status: HttpStatus.OK,
-      message: 'User retrieved successfully',
+      message: 'User fetch successfully',
       data: user,
     }
   }
