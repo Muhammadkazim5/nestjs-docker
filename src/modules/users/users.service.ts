@@ -1,4 +1,4 @@
-import { HttpStatus, Injectable } from '@nestjs/common';
+8import { HttpStatus, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
@@ -44,7 +44,7 @@ export class UsersService {
     const user = this.remove(id);
     return {
       status: HttpStatus.OK,
-      message: 'User removed successfully',
+      message: 'User Deleted successfully',
       data: user,
     }
   }
